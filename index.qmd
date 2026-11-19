@@ -1,0 +1,58 @@
+---
+title: "Sparse regression for analytical surrogate models in fracture mechanics"
+subtitle: "Abstract for ESCM13"
+author:
+  - name: Flavien Loiseau
+    orcid: 0000-0002-6305-7309
+    email: flavien.loiseau@insa-lyon.fr
+    affiliation: INSA Lyon, CNRS, LaMCoS, UMR5259, 69621 Villeurbanne, France
+  - name: Véronique Lazarus
+    orcid: 0000-0003-0081-2650
+    email: veronique.lazarus@ensta.fr
+    affiliation: IMSIA, CNRS, EDF, ENSTA, Institut Polytechnique de Paris, 91120, Palaiseau, France
+format:
+  html:
+    embed-resources: true
+    toc: true
+  pdf:
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    template-partials: 
+      - title.tex
+    include-in-header:
+      text: |
+        \usepackage[noblocks]{authblk}
+        \renewcommand*{\Authsep}{, }
+        \renewcommand*{\Authand}{, }
+        \renewcommand*{\Authands}{, }
+        \renewcommand\Affilfont{\small}
+bibliography: biblio.bib
+csl: apa.csl
+title-block-banner: "#2b2071"
+
+---
+
+In the design of mechanical structures, it is often necessary to guarantee their structural integrity in the presence of defects, such as cracks.
+To this end, Linear Elastic Fracture Mechanics provides a modeling framework in which crack propagation criteria are expressed in terms of stress intensity factors, which characterize the near-tip stress field [@williams_stress_1957].
+Estimating these factors requires solving the elasticity problem of the configuration at hand.
+In general, a dimensional analysis of the problem reveals dimensionless stress intensity factors, also known as configuration factors, which highlight the dimensionless parameters governing the stress field at the crack tip and therefore the cracking behavior.
+These stress intensity factors are determined analytically when possible, or through polynomial regressions fitted to parametric numerical studies for more complex problems.
+The resulting solutions have been catalogued in fracture mechanics handbooks [@tada_stress_2000], covering problems that can be solved analytically as well as standard configurations.
+However, obtaining such solutions generally requires substantial expertise, and polynomial regressions may yield overly complex models [@newman_stress-intensity_1981].
+
+In this contribution, we propose to replace polynomial regressions with sparse regressions, possibly nonlinear.
+With this approach, we are able to recover sparse analytical expressions for the dimensionless stress intensity factors directly from the parametric numerical study.
+We first validate the approach by recovering known analytical solutions purely from the numerical simulations.
+To illustrate a more practical application, we also revisit standard problems to provide more concise solutions.
+Ultimately, a key feature of this approach is that it can close the fracture mechanics problem, making it fully analytical.
+This is showcased through the analysis of a more complex problem, supported by experiments: the analysis of an unsteadily rotating pre-cracked plate.
+By linking the control parameters of the experiments (geometry, angular velocity and acceleration) to the energy release rate, we are able to recover the fracture toughness of the material constituting the plate.
+Beyond its interpretability, the proposed method also makes it straightforward to evaluate the sensitivities to the governing parameters, which can be exploited in a variety of problems such as uncertainty propagation or optimization.
+
+## References
+
+::: {#refs}
+:::
